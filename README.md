@@ -11,7 +11,7 @@ REST API to serve the contents of the JSON and XML file filterable by name and
 discount_percentage.
 <ul>
 <li>CSV file is placed under "public" folder.</li>
-<li>Only .csv file name (E.g. data.csv)</li>
+<li>Only .csv file name in url (E.g. URL name/convert/csv/data.csv)</li>
 </ul>
 
 # Incomplete Features
