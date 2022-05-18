@@ -7,7 +7,7 @@ CLI command to convert the input CSV file (see last section) to a JSON and XML f
 <li>Full URL path for .csv file required. (E.g. http://127.0.0.1:8000/convert/csv/data.csv)</li>
 </ul>
 
-REST API to serve the contents of the JSON file filterable by name and
+REST API to serve the contents of the JSON and XML file filterable by name and
 discount_percentage.
 <ul>
 <li>CSV file is placed under "public" folder.</li>
