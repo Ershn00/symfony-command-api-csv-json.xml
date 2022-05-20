@@ -15,7 +15,7 @@
 
 ## REST API
 <b>REST API</b> serves the contents of the JSON file filterable by name and
-discount_percentage. Serving filtered response in JSON and XML formats.
+discount_percentage. Serves filtered response in JSON and XML formats.
 <ul>
 <li>CSV file should be placed under "public" folder in order to be read.</li>
 <ul>
