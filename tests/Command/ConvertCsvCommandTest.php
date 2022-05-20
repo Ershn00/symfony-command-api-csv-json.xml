@@ -10,7 +10,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 
 class ConvertCsvCommandTest extends TestCase
 {
-    public function test_csv_command()
+    public function testCsvCommand()
     {
         $convertCsv = new ConvertCsvService();
         $json_response = $convertCsv->processFile("http://127.0.0.1:8000/data.csv");

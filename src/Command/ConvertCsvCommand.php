@@ -11,6 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Filesystem;
 
 #[AsCommand(
     name: 'app:convert-csv',
@@ -34,14 +35,23 @@ class ConvertCsvCommand extends Command
         //Validate entered file
         $provide_file = $this->validateFile($io);
 
-        //Process CSV file & return JSON
+        //Process CSV file & prepare JSON for return
         $convertCsv = new ConvertCsvService();
         $json_response = $convertCsv->processFile($provide_file);
 
+        //Process XML
         $json_input = json_decode ($json_response, true);
         $xml = new SimpleXMLElement('<root/>');
         $convertCsv->arrayToXml($json_input, $xml);
+        $p_xml = $xml->asXML();
 
+        //Write XML to file
+        //dump($xml);
+        $path = dirname(__DIR__) . '/Data/data'.date('Ymdhis', mktime(0, 0, 0, 7, 1, 2000)).'.xml';
+        $fileSystem = new Filesystem();
+        $fileSystem->dumpFile($path, $p_xml);
+
+        //Return Json
         return dd($json_response);
     }
 
