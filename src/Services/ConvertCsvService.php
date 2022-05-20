@@ -21,7 +21,7 @@ class ConvertCsvService
     }
 
     /**
-     * Convert an array to XML
+     * Convert an array to XML (Taken from stackoverflow)
      * @param array $array
      * @param SimpleXMLElement $xml
      */
